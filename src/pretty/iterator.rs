@@ -100,8 +100,10 @@ impl Debug for MapIterator {
     }
 }
 
+type InnerMapIterator = Peekable<Enumerate<Box<dyn Iterator<Item = (Part, Part)> + 'static>>>;
+
 pub struct MapIterator {
-    iterator: Peekable<Enumerate<Box<dyn Iterator<Item = (Part, Part)> + 'static>>>,
+    iterator: InnerMapIterator,
 }
 
 #[allow(non_snake_case)]

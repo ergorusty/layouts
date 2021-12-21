@@ -17,6 +17,7 @@ impl Doc {
         self.render_with_config(RenderConfig { width: 80 })
     }
 
+    #[allow(clippy::expect_used)]
     pub fn render_with_config(self, config: impl Into<RenderConfig>) -> String {
         let config = config.into();
         let mut vec = Vec::new();
